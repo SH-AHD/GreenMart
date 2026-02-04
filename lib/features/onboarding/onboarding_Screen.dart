@@ -56,7 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Button(
                     title: "Get Started",
                     onpress: () {
-                      pushPage(context: context, newScreen: LoginScreen());
+                      pushReplacementPage(context: context, newScreen: LoginScreen());
                     },
                   ),
                 ],

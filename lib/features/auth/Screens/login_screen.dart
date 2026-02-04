@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_mart/core/constants/app_assets.dart';
+import 'package:green_mart/core/helpers/app_validator.dart';
 import 'package:green_mart/core/routing/navigations.dart';
 import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/text_styles.dart';
@@ -18,6 +19,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _formKey= GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,45 +28,51 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(25),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 20,),
-              Center(child: SvgPic(img: AppAssets.carrotSvg)),
-              SizedBox(height: 60,),
-              Text("Login",style: TextStyles.font24BlackW600,),
-               SizedBox(height: 5,),
-              Text("Enter your emails and password",style: TextStyles.font16Black.copyWith(color: AppColors.black.withAlpha(150),),),
-               SizedBox(height: 30,),
-                titleWithField(title: "Email"),
-                 SizedBox(height:30,),
-              titleWithField(title: "Password",isPass:true),
-         Align(
-          alignment: Alignment.topRight,
-           child: TextButton(onPressed: (){
-            pushPage(context: context, newScreen: ForgotPasswordScreen());
-           }, child: Text("Forgot Password?",style: TextStyles.font14Black,),
-           ),
-         ),            
-         SizedBox(height: 30),
-              Button(title: "Log In", onpress: (){
-                pushPage(context: context, newScreen: HomeScreen());
-              },),
-              Center(
-                child: TextButton(onPressed: (){
-                            pushPage(context: context, newScreen: SignupScreen());
-                           }, child: RichText(
-                            text: TextSpan(
-                        children: [
-                          TextSpan(text:"Don’t have an account? ",style: TextStyles.font16Black,),
-                          TextSpan(text:"Singup",style: TextStyles.font16Black.copyWith(color: AppColors.primaryColor,fontWeight: FontWeight.bold),),
-                        ]
-                        ),
-                        ),
-                           ),
-              ),
-            ],
+          child: Form(
+            key:_formKey ,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20,),
+                Center(child: SvgPic(img: AppAssets.carrotSvg)),
+                SizedBox(height: 60,),
+                Text("Login",style: TextStyles.font24BlackW600,),
+                 SizedBox(height: 5,),
+                Text("Enter your emails and password",style: TextStyles.font16Black.copyWith(color: AppColors.black.withAlpha(150),),),
+                 SizedBox(height: 30,),
+                  titleWithField(title: "Email",validator: AppValidators.validateEmail, controller: null),
+                   SizedBox(height:30,),
+                titleWithField(title: "Password",isPass:true,validator: AppValidators.validatePassword, controller: null),
+                     Align(
+            alignment: Alignment.topRight,
+             child: TextButton(onPressed: (){
+              pushPage(context: context, newScreen: ForgotPasswordScreen());
+             }, child: Text("Forgot Password?",style: TextStyles.font14Black,),
+             ),
+                     ),            
+                     SizedBox(height: 30),
+                Button(title: "Log In", onpress: (){
+                  if(_formKey.currentState!.validate()){
+                  pushReplacementPage(context: context, newScreen: HomeScreen());
+
+                  }
+                },),
+                Center(
+                  child: TextButton(onPressed: (){
+                              pushReplacementPage(context: context, newScreen: SignupScreen());
+                             }, child: RichText(
+                              text: TextSpan(
+                          children: [
+                            TextSpan(text:"Don’t have an account? ",style: TextStyles.font16Black,),
+                            TextSpan(text:"Singup",style: TextStyles.font16Black.copyWith(color: AppColors.primaryColor,fontWeight: FontWeight.bold),),
+                          ]
+                          ),
+                          ),
+                             ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

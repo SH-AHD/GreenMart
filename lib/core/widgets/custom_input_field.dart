@@ -4,16 +4,31 @@ import 'package:green_mart/core/styles/text_styles.dart';
 
 class CustomInputField extends StatelessWidget {
   const CustomInputField({
-    super.key, this.hint, this.pre, this.suf,});
+    super.key, this.hint, 
+    this.pre, this.suf,
+    
+    this.validator,
+    this.controller,
+    
+    });
 
 final String? hint;
 final Widget? pre;
 final Widget? suf;
 
+final String? Function(String?)? validator;
+final TextEditingController? controller;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
+      validator: validator,
+      controller: controller,
+
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey.shade200,
         prefixIcon: pre,
         suffixIcon: suf,
         hintText: hint,
