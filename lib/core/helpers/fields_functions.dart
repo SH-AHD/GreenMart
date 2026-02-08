@@ -11,6 +11,7 @@ Widget titleWithField({
   bool isPass = false,
   required String? Function(String?)? validator,
   required TextEditingController? controller,
+  TextInputType? keyboardType,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,6 +30,7 @@ Widget titleWithField({
               suf: suf,
               validator: validator,
               controller: controller,
+              keyboardType: keyboardType,
             ),
     ],
   );

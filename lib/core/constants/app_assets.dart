@@ -11,4 +11,5 @@ class AppAssets {
   static const String storeSvg = 'assets/icons/store.svg';
   static const String checkIconSvg = 'assets/images/checkIcon.svg';
   static const String payCard = 'assets/images/card.png';
+  static const String banana = 'assets/imgs/banana.png';
 }

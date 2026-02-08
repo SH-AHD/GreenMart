@@ -11,6 +11,7 @@ final Widget? pre;
 final String? Function(String?)? validator;
 final TextEditingController? controller;
 
+
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
 }
@@ -25,6 +26,8 @@ bool isObscure=true;
       
       controller: widget.controller,
 
+
+      keyboardType: TextInputType.visiblePassword,
       obscureText: isObscure,
       decoration: InputDecoration(
         filled: true,
