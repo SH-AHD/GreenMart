@@ -9,24 +9,29 @@ class Button extends StatelessWidget {
     this.height = 55,
     required this.title,
     required this.onpress,
+    this.widget,
+    this.bgcolor,
   });
 
   final double width;
   final double height;
   final String title;
   final Function() onpress;
+  final Widget? widget;
+  final Color? bgcolor;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        backgroundColor:bgcolor?? AppColors.primaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18)),
         minimumSize: Size(width, height),
       ),
 
       onPressed: onpress,
-      child: Text(
+      child: widget??Text(
         title,
         style: TextStyles.font18BlackW600.copyWith(
           color: AppColors.backgroundColor,

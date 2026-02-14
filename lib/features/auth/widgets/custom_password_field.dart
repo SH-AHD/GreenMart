@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:green_mart/core/styles/app_colors.dart';
-import 'package:green_mart/core/styles/text_styles.dart';
 
 class CustomPasswordField extends StatefulWidget {
   const CustomPasswordField({
-    super.key,this.pre});
+    super.key,this.pre,
+    this.validator,
+    this.controller,
+    });
 final Widget? pre;
+final String? Function(String?)? validator;
+final TextEditingController? controller;
+
 
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
@@ -17,8 +22,16 @@ bool isObscure=true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: widget.validator,
+      
+      controller: widget.controller,
+
+
+      keyboardType: TextInputType.visiblePassword,
       obscureText: isObscure,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey.shade200,
         prefixIcon: widget.pre,
         suffixIcon: IconButton(
           icon: Icon(isObscure?Icons.visibility:Icons.visibility_off,color: AppColors.grey,),
@@ -27,13 +40,12 @@ bool isObscure=true;
             isObscure=!isObscure;
           });
           }),
-        hintText: "● ● ● ● ● ● ● ●",
-        hintStyle: TextStyles.font14Black.copyWith(color:AppColors.grey),
-          enabledBorder: OutlineInputBorder(
+           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide(
               color: Colors.grey.shade400,
             ),
+            
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),

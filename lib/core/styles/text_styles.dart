@@ -8,6 +8,13 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.black,
   );
+  static TextStyle font33BlackW600 = TextStyle(
+    fontSize: 33,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
 
   static TextStyle font24BlackW600 = TextStyle(
     fontSize: 24,
@@ -22,6 +29,16 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.black,
   );
+
+
+  static TextStyle font18GrayW600 = TextStyle(
+    fontSize: 18,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: AppColors.grey,
+  );
+
+
 
   static TextStyle font16Black = TextStyle(
     fontSize: 16,

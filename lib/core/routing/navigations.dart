@@ -9,3 +9,11 @@ void pushReplacementPage({required BuildContext context,required Widget newScree
 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>newScreen));
 
 }
+
+void pushAndRemoveUntil({required BuildContext context,required Widget newScreen}) {
+  Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) => newScreen),
+    (route) => false,
+  );
+}
