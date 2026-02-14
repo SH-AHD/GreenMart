@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:green_mart/core/constants/app_assets.dart';
 import 'package:green_mart/core/helpers/confirm_dialog.dart';
@@ -7,8 +5,6 @@ import 'package:green_mart/core/routing/navigations.dart';
 import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/text_styles.dart';
 import 'package:green_mart/core/widgets/button.dart';
-import 'package:green_mart/core/widgets/custom_network_img.dart';
-import 'package:green_mart/core/widgets/svg_pic.dart';
 import 'package:green_mart/features/account/widgets/account_header.dart';
 import 'package:green_mart/features/account/widgets/account_options.dart';
 import 'package:green_mart/features/auth/Screens/login_screen.dart';

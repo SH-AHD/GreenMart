@@ -3,7 +3,8 @@ import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/text_styles.dart';
 
 class AmountCounter extends StatefulWidget {
- const AmountCounter({super.key});
+  final Function(int) onAmountChanged;
+ const AmountCounter({super.key, required this.onAmountChanged});
 
   @override
   State<AmountCounter> createState() => _AmountCounterState();
@@ -21,7 +22,7 @@ class _AmountCounterState extends State<AmountCounter> {
         if(orderedAmount>1){
           setState(() {
         orderedAmount--;
-        
+        widget.onAmountChanged(orderedAmount);
       });
         }
               
@@ -42,6 +43,7 @@ class _AmountCounterState extends State<AmountCounter> {
         setState(() {
         
 orderedAmount++;
+widget.onAmountChanged(orderedAmount);
       });
       }
 

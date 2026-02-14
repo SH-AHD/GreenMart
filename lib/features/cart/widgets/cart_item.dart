@@ -5,7 +5,6 @@ import 'package:green_mart/core/styles/text_styles.dart';
 import 'package:green_mart/core/widgets/custom_network_img.dart';
 import 'package:green_mart/features/Shop/data/models/product_model.dart';
 import 'package:green_mart/features/Shop/data/repo/dummy_data.dart';
-import 'package:green_mart/features/auth/Screens/login_screen.dart';
 import 'package:green_mart/features/cart/widgets/item_counter.dart';
 
 class CartItem extends StatefulWidget {
@@ -48,7 +47,9 @@ class _CartItemState extends State<CartItem> {
                     style: TextStyles.font14Black.copyWith(color: AppColors.grey),
                   ),
                   SizedBox(height: 10),
-                  ItemCounter(),
+                  ItemCounter(onAmountChanged: (newAmount){
+                    widget.model.quantity=newAmount;
+                  }),
                 ],
               ),
             ),

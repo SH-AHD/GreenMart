@@ -7,6 +7,7 @@ String? price;
 String? amount;
 String? description;
 String? tag;
+int quantity;
 
 // constractor
 ProductModel({
@@ -18,6 +19,7 @@ this.price,
 this.amount,
 this.description,
 required this.tag,
+this.quantity = 1,
 });
 
 }

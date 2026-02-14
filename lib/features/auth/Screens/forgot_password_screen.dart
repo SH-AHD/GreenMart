@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:green_mart/core/constants/app_assets.dart';
 import 'package:green_mart/core/helpers/app_validator.dart';
 import 'package:green_mart/core/helpers/fields_functions.dart';
-import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/text_styles.dart';
 import 'package:green_mart/core/widgets/button.dart';
 import 'package:green_mart/core/widgets/svg_pic.dart';

@@ -457,17 +457,16 @@ void removeFromCart(ProductModel product){
 }
 
 
-double calcTotalCost(List<ProductModel> items) {
+String calcTotalCost(List<ProductModel> items) {
   double total = 0.0;
   
   for (var item in items) {
     double price = double.tryParse(item.price?.replaceAll('\$', '') ?? '0') ?? 0.0;
-        double amount = double.tryParse(item.amount?.replaceAll('\$', '') ?? '0') ?? 0.0;
-    
-     total += price * amount; 
+
+     total += price * item.quantity; 
   }
   
-  return total;
+  return total.toStringAsFixed(2);
 }
 }
 

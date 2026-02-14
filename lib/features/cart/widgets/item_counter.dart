@@ -3,7 +3,8 @@ import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/text_styles.dart';
 
 class ItemCounter extends StatefulWidget {
-  const ItemCounter({super.key});
+  final Function(int) onAmountChanged;
+  const ItemCounter({super.key, required this.onAmountChanged});
 
   @override
   State<ItemCounter> createState() => _ItemCounterState();
@@ -25,6 +26,7 @@ class _ItemCounterState extends State<ItemCounter> {
               if (orderedAmount > 1) {
                 setState(() {
                   orderedAmount--;
+                  widget.onAmountChanged(orderedAmount);
                 });
               }
             },
@@ -49,6 +51,7 @@ class _ItemCounterState extends State<ItemCounter> {
               if (orderedAmount < 10000) {
                 setState(() {
                   orderedAmount++;
+                  widget.onAmountChanged(orderedAmount);
                 });
               }
             },

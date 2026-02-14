@@ -52,9 +52,9 @@ return CartItem(
      height: 66,
      onpress: (){
       final currentItems = ShopRepository().getCartProducts();
-     double totalCost=ShopRepository().calcTotalCost(currentItems);
-     print(currentItems.length);
-     showCheckout(context, 100.99);
+     String totalCost=ShopRepository().calcTotalCost(currentItems);
+
+     showCheckout(context, totalCost);
      }),
    ),
    

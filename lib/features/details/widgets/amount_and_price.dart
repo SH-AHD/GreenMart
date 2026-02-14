@@ -16,7 +16,9 @@ class AmountAndPrice extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-     AmountCounter(),
+     AmountCounter(onAmountChanged: (newAmount){
+      model.quantity=newAmount;
+     }),
      Text(model.price??'--',style: TextStyles.font18BlackW600.copyWith(fontSize: 20),),
       
       ],

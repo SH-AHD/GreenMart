@@ -6,7 +6,7 @@ import 'package:green_mart/core/styles/text_styles.dart';
 import 'package:green_mart/core/widgets/button.dart';
 import 'package:green_mart/features/cart/screens/place_order.dart';
 
-Future<dynamic> showCheckout(BuildContext context, double totalCost){
+Future<dynamic> showCheckout(BuildContext context, String totalCost){
   return  showModalBottomSheet(context: context, 
     backgroundColor: AppColors.backgroundColor,
     shape: RoundedRectangleBorder(
@@ -26,7 +26,7 @@ useSafeArea: true,
 
 class CheckoutSheet extends StatelessWidget {
   const CheckoutSheet({super.key,required this.totalCost});
-final double totalCost;
+final String totalCost;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -99,7 +99,7 @@ final double totalCost;
                mainAxisSize: MainAxisSize.min,
                 children: [
             
-                 Text("$totalCost", style: TextStyles.font16Black),
+                 Text(totalCost, style: TextStyles.font16Black),
             
                 Icon(Icons.chevron_right, color: AppColors.grey),
               ],
