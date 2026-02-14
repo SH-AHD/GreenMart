@@ -3,6 +3,10 @@ import 'package:green_mart/core/constants/app_assets.dart';
 import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/widgets/svg_pic.dart';
 import 'package:green_mart/features/Shop/screens/shop_screen.dart';
+import 'package:green_mart/features/account/screen/account.dart';
+import 'package:green_mart/features/cart/screens/cart_screen.dart';
+import 'package:green_mart/features/explore/screens/explore_screen.dart';
+import 'package:green_mart/features/favoruite/screens/fav_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,11 +18,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> screens = [
     ShopScreen(),
-    Center(child: Text("Hello 2")),
-    Center(child: Text("Hello 3")),
-    Center(child: Text("Hello 4")),
-    Center(child: Text("Hello 5")),
-    Center(child: Text("Hello 6")),
+    ExploreScreen(),
+    CartScreen(),
+    FavoruiteScreen(),
+    AccountScreen(),
   ];
   int currentIndex = 0;
 

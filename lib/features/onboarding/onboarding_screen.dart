@@ -47,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   Text(
-                    "Ger your groceries in as fast as one hour",
+                    "Get your groceries in as fast as one hour",
                     style: TextStyles.font16Black.copyWith(
                       color: AppColors.backgroundColor,
                     ),

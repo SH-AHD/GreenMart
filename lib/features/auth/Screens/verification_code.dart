@@ -39,13 +39,13 @@ CustomPinputField(),
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-TextButton(child: Text("Resend OTP",style: TextStyles.font14Black.copyWith(color: AppColors.OTPColor),),onPressed: (){},),
+TextButton(child: Text("Resend OTP",style: TextStyles.font14Black.copyWith(color: AppColors.otpColor),),onPressed: (){},),
 TextButton(child: Text("Change Phone Number",style: TextStyles.font14Black.copyWith(color: AppColors.grey),),onPressed: (){},),
              ],
              ),
    SizedBox(height: 30),
               Button(title: "Confirm",onpress: (){
-                pushReplacementPage(context: context, newScreen: HomeScreen());
+                pushAndRemoveUntil(context: context, newScreen: HomeScreen());
               },)
             ],
           ),

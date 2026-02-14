@@ -31,7 +31,7 @@ class CustomPinputField extends StatelessWidget {
             defaultPinTheme: defaultPinTheme,
             separatorBuilder: (index) => const SizedBox(width: 8),
             validator: (value) {
-              return value == '2222' ? null : 'Pin is incorrect';
+              return value == '22225' ? null : 'Pin is incorrect';
             },
             hapticFeedbackType: HapticFeedbackType.lightImpact,
             onCompleted: (pin) {

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:green_mart/core/styles/app_colors.dart';
 import 'package:green_mart/core/styles/app_fonts.dart';
@@ -53,7 +55,7 @@ class MainApp extends StatelessWidget {
           fillColor: Colors.grey.shade200,
           hintStyle: TextStyles.font14Black.copyWith(color: AppColors.grey),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(18),
             borderSide: BorderSide(color: AppColors.borderColor),
           ),
           focusedBorder: OutlineInputBorder(
@@ -71,9 +73,18 @@ class MainApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             borderSide: BorderSide(color: AppColors.errorColor),
           ),
+          disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(18),
+            borderSide: BorderSide(color: AppColors.borderColor),
+          ),
         ),
       ),
-
+builder:(context, child) {
+  return SafeArea(
+    top: false,
+    bottom: Platform.isAndroid,
+    child: child?? SizedBox.shrink());
+},
       home: SplashScreen(),
     );
   }

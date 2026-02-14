@@ -9,5 +9,12 @@ class AppColors {
   static const Color accentColor = Color(0xffF0F1F2);
   static const Color borderColor = Color(0xffE2E2E2);
   static const Color shadowColor=Color(0xff555E58);
-  static const Color OTPColor=Color(0xffF37A20);
+  static const Color otpColor=Color(0xffF37A20);
+  static const Color lightGreen = Color(0xff53B175);
+  static const Color lightRed = Color(0xffF7A593);
+  static const Color lightPurple = Color(0xffD3B0E0);
+  static const Color midOrange = Color(0xffF8A44C);
+  static const Color lightOrange = Color(0xffFDE598);
+  static const Color lightBlue = Color(0xffB7DFF5);
+
 }
